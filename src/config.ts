@@ -33,6 +33,8 @@ export const wedding = {
   
   familyHost: "Ratra Family",
   familyAddress: "71, Guru Road, Dehradun",
+  familyMapsUrl: "https://maps.app.goo.gl/P6GvRcxQmBP2NZ2a6",
+  familyMapsCoordinates: "30.311054,78.020105",
   
   hashtag: "#SimranjeetWedsPallak",
   monogram: "S · P",

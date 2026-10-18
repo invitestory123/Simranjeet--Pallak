@@ -136,10 +136,17 @@ export default function Footer() {
               <p className="font-display text-base font-semibold text-[#faf3eb]">
                 {wedding.familyHost}
               </p>
-              <p className="mt-0.5 flex items-center gap-1 text-xs text-[#e8dcc8]/75">
-                <MapPin size={12} className="text-[#c45a7a]" />
-                {wedding.familyAddress}
-              </p>
+              <a
+                href={wedding.familyMapsUrl || "https://maps.app.goo.gl/P6GvRcxQmBP2NZ2a6"}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-0.5 inline-flex items-center gap-1 text-xs text-[#e8dcc8]/75 hover:text-[#f2c4d0] hover:underline transition-colors"
+                title="Open location in Google Maps"
+              >
+                <MapPin size={12} className="text-[#c45a7a] shrink-0" />
+                <span>{wedding.familyAddress}</span>
+                <span className="text-[10px] text-[#c9a86a]">↗</span>
+              </a>
             </div>
           </div>
         </Reveal>

@@ -15,6 +15,7 @@ interface VenueItem {
   address: string;
   purpose: string;
   mapsQuery: string;
+  mapsUrl?: string;
   icon: typeof Utensils;
 }
 
@@ -43,7 +44,8 @@ const VENUES: VenueItem[] = [
     name: "71, Guru Road",
     address: "71, Guru Road, Dehradun, Uttarakhand",
     purpose: "Sehrabandi (8:00 AM) & Departure of Barat (10:00 AM)",
-    mapsQuery: "71 Guru Road Dehradun Uttarakhand",
+    mapsQuery: wedding.familyMapsCoordinates || "30.311054,78.020105",
+    mapsUrl: wedding.familyMapsUrl || "https://maps.app.goo.gl/P6GvRcxQmBP2NZ2a6",
     icon: Home,
   },
 ];
@@ -132,7 +134,7 @@ export default function Venue() {
         {/* Directions & Calendar CTAs */}
         <Reveal delay={0.12} className="flex flex-col gap-3">
           <a
-            href={mapsDirectionsUrl(selectedVenue.mapsQuery)}
+            href={selectedVenue.mapsUrl || mapsDirectionsUrl(selectedVenue.mapsQuery)}
             target="_blank"
             rel="noreferrer"
             className="group relative flex items-center justify-center gap-3 overflow-hidden rounded-full bg-[#c45a7a] px-8 py-4 text-[11px] font-medium uppercase tracking-[0.25em] text-[#faf3eb] shadow-[0_14px_36px_rgba(196,90,122,0.4)] transition-transform duration-300 ease-out active:scale-[0.98] hover:bg-[#a23d5d]"

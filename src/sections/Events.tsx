@@ -272,6 +272,14 @@ export default function Events() {
             {/* Actions */}
             <div className="mt-6 flex flex-wrap gap-3">
               <a
+                href={wedding.familyMapsUrl || "https://maps.app.goo.gl/P6GvRcxQmBP2NZ2a6"}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 rounded-full border border-[#f2c4d0]/30 bg-white/[0.05] px-5 py-2.5 text-[11px] uppercase tracking-[0.2em] text-[#faf3eb] hover:bg-white/10 transition-colors"
+              >
+                <Navigation size={13} /> Home (Barat)
+              </a>
+              <a
                 href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent("Gurudwara Sahib Gobind Nagar Race Course Dehradun")}`}
                 target="_blank"
                 rel="noreferrer"
